@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Core Fitness is a neighbourhood gym in Pune with expert trainers, strength and cardio floors, and daily yoga classes.">
+<title>Core Fitness — Build Your Core</title>
+
+<!-- Apply saved/system theme before first paint so the page never flashes the wrong colours -->
+<script>
+(function(){
+  var t;
+  try{t=localStorage.getItem('theme');}catch(e){}
+  if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  document.documentElement.setAttribute('data-theme',t);
+})();
+</script>
+
+<!-- AOS: smooth scroll animations (creativity pick 1) -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+<style>
+:root{--brand:#c81e1e;--brand-dark:#7f1010;--ink:#1c1917;--paper:#fafafa;--surface:#ffffff;--line:#e7e5e4;--muted:#6b6560;--heading:#7f1010;--footer-bg:#141414;}
+[data-theme="dark"]{--ink:#f5f5f4;--paper:#0f0f10;--surface:#1a1a1c;--line:#2e2e31;--muted:#a8a29e;--heading:#f87171;--footer-bg:#000;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;transition:background .3s,color .3s;}
+nav{position:sticky;top:0;background:var(--surface);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:14px 6%;z-index:10;flex-wrap:wrap;gap:8px;transition:background .3s,border-color .3s;}
+.logo{font-weight:800;font-size:20px;color:var(--heading);}
+nav ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap;}
+nav a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:600;}
+nav a:hover{color:var(--heading);}
+.theme-toggle{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;font-size:17px;cursor:pointer;line-height:1;transition:transform .2s,border-color .2s;}
+.theme-toggle:hover{transform:rotate(20deg);border-color:var(--brand);}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:3px;}
+@keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero{padding:80px 6%;background:linear-gradient(135deg,var(--brand-dark) 0%,#141414 100%);color:#fff;text-align:center;}
+.hero h1{font-size:42px;margin-bottom:12px;animation:rise .7s ease both;}
+.hero p{max-width:560px;margin:0 auto 26px;font-size:17px;opacity:.95;animation:rise .7s ease .15s both;}
+.btn{display:inline-block;background:#fff;color:var(--brand-dark);padding:12px 28px;border-radius:999px;font-weight:700;text-decoration:none;animation:rise .7s ease .3s both;}
+section{padding:60px 6%;scroll-margin-top:64px;}
+h2{font-size:28px;margin-bottom:8px;color:var(--heading);}
+.sub{color:var(--muted);margin-bottom:28px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .2s,box-shadow .2s,background .3s,border-color .3s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.18);}
+.card h3{margin-bottom:8px;font-size:18px;}
+.card p{font-size:14px;color:var(--muted);}
+.btn-small{display:inline-block;margin-top:12px;padding:8px 18px;background:var(--brand);color:#fff;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;}
+.quote{background:var(--surface);border-left:4px solid var(--brand);padding:18px 22px;border-radius:8px;margin-bottom:14px;font-style:italic;transition:background .3s;}
+.quote b{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--muted);}
+.whats-float{position:fixed;bottom:22px;right:22px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:20;transition:transform .2s;}
+.whats-float:hover{transform:scale(1.1);}
+footer{background:var(--footer-bg);color:#d6d3d1;padding:34px 6%;text-align:center;font-size:13px;}
+footer a{color:#fca5a5;}
+@media(max-width:640px){nav ul{gap:12px;}.hero h1{font-size:30px;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.hero h1,.hero p,.btn{animation:none;}*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Core Fitness</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <!-- Dark mode toggle (creativity pick 2) -->
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">🌙</button>
+</nav>
+
+<header class="hero">
+  <h1>Build Your Core. Change Your Life.</h1>
+  <p>Core Fitness is your neighbourhood gym with expert trainers, modern equipment and a community that keeps you showing up.</p>
+  <a class="btn" href="#classes">Explore Classes</a>
+</header>
+
+<section id="about">
+  <h2 data-aos="fade-up">About Us</h2>
+  <p class="sub" data-aos="fade-up" data-aos-delay="100">Why members stay with us.</p>
+  <p data-aos="fade-up" data-aos-delay="200">Core Fitness began in 2019 as a small training hall with one squat rack and one promise: every member gets a plan built for them, not a printout. Today we have a full strength floor, a cardio zone and a yoga studio, and our trainers still know every member by name.</p>
+</section>
+
+<section id="classes">
+  <h2 data-aos="fade-up">Our Classes</h2>
+  <p class="sub" data-aos="fade-up" data-aos-delay="100">Three ways to train at Core Fitness.</p>
+  <div class="cards">
+    <div class="card" data-aos="fade-up"><h3>Strength Training</h3><p>Free weights, racks and guided programmes for beginners and lifters alike. A trainer checks your form every session.</p></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="150"><h3>Cardio &amp; HIIT</h3><p>High-energy 45-minute group sessions that burn fat and build stamina. Morning and evening batches.</p></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300"><h3>Yoga &amp; Mobility</h3><p>Daily classes for flexibility, recovery and stress relief. Open to all levels, mats provided.</p></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2 data-aos="fade-up">What Members Say</h2>
+  <p class="sub" data-aos="fade-up" data-aos-delay="100">Real words from real regulars.</p>
+  <div class="quote" data-aos="fade-up">"I lost 12 kg in six months and the trainers never let me skip a session. Best decision I made last year."<b>— Ankit, member since 2022</b></div>
+  <div class="quote" data-aos="fade-up" data-aos-delay="150">"The morning yoga class fixed my back pain from desk work. Clean space, friendly staff, no pressure."<b>— Neha, software engineer</b></div>
+</section>
+
+<section id="contact">
+  <h2 data-aos="fade-up">Contact Us</h2>
+  <p class="sub" data-aos="fade-up" data-aos-delay="100">Three ways to reach us. Pick what suits you.</p>
+  <div class="cards">
+    <div class="card" data-aos="fade-up"><h3>WhatsApp</h3><p>Fastest reply for memberships and free trial bookings.</p><a class="btn-small" href="https://wa.me/919876543210" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="150"><h3>Call Us</h3><p>Mon–Sat 5 AM to 10 PM, Sunday 7 AM to 12 PM.</p><a class="btn-small" href="tel:+919876543210">Call Now</a></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300"><h3>Visit Us</h3><p>45 Station Road, Pune, Maharashtra 411001. Your first day is a free trial.</p></div>
+  </div>
+</section>
+
+<a class="whats-float" href="https://wa.me/919876543210" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<footer>
+  <p>© 2026 Core Fitness · 45 Station Road, Pune · <a href="tel:+919876543210">+91 98765 43210</a> · <a href="mailto:hello@corefitness.in">hello@corefitness.in</a></p>
+  <!-- STUDENT BRANDING LINE — uncomment and add your name + access key (Showcase priority + 5 XP):
+  <p style="margin-top:8px;font-size:12px">Crafted by <b>[Your Name]</b> · ApnoAI Web Development Intern, October 2026 · <a href="https://apnoai.com">apnoai.com</a> · Verify: apnoai.com/verify?id=[YOUR-ACCESS-KEY]</p>
+  -->
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// Scroll animations: if the AOS library fails to load, keep all content visible
+if(window.AOS){
+  AOS.init({duration:700,easing:'ease-out',once:true,offset:60,
+    disable:window.matchMedia('(prefers-reduced-motion: reduce)').matches});
+}else{
+  var s=document.createElement('style');
+  s.textContent='[data-aos]{opacity:1!important;transform:none!important;}';
+  document.head.appendChild(s);
+}
+
+// Dark mode toggle: saves the choice in the browser
+var root=document.documentElement,btn=document.getElementById('themeToggle');
+function updateButton(){
+  var dark=root.getAttribute('data-theme')==='dark';
+  btn.textContent=dark?'☀️':'🌙';
+  btn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+}
+btn.addEventListener('click',function(){
+  var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  root.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next);}catch(e){}
+  updateButton();
+});
+updateButton();
+</script>
+
+</body>
+</html>
